@@ -18,18 +18,29 @@
 define([
     "jquery",
     "underscore",
-    "backbone"
-    ], function( $, _, Backbone ) {
+    "backbone",
+    'text!/templates/home'
+    ], function( $, _, Backbone, mainTemplate ) {
 
     var mainView = Backbone.View.extend({
-        el: $( "#main" ),
-        initialize: function () {
-             this.render();
+        el: 'body',
+        initialize:function(){
+            this.render();
         },
-        render: function() {
-            this.el.html("huzzah!");
+        events:{
+            "click #mainButton":"actionButon"
+        },
+        render: function(){
+            var holaMundo={mainvar:"now", mainButton:"Press Me"};
+            var template= _.template( mainTemplate,holaMundo );
+            this.$el.html(template);
+        },
+        actionButon:function(){
+            alert('hihi');
         }
     });
-    return mainView;
+    return {
+        mainView : mainView
+    };
 
 });
