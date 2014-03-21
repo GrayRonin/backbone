@@ -11,20 +11,48 @@ define([
            // this.render();
         },
         events:{
-            "mouseenter nav .main_menu li":"scroll"
+            "mouseenter nav .main_menu li":"scroll",
+            "mouseleave nav .main_menu li":"scrollHide",
+            "click #power":'shutdown'
+            
         },
         render: function(){
             var view=this;
             var variables={mainvar:"now", mainButton:"Press Me"};
             var maintemplate= _.template( mainTemplate,variables);
             this.$el.html(maintemplate);
+            
         },
         scroll:function(e){
-            console.log($(e.currentTarget))
-            console.log($(e.currentTarget).children()[1])
-            $(e.currentTarget).children()[1].css({
-                'display':'block'
-            });
+           $('.scroll').animate({
+                marginTop:'-10px',
+                opacity: 0,
+                
+           },100);
+           $('#' + e.currentTarget.id + ' .scroll').animate({
+              marginTop:'+=15px',
+              opacity: 1,
+           },500);
+        },
+        scrollHide:function(e){
+            $('.scroll').animate({
+                marginTop:'+=-10px',
+                opacity: 0,
+           },100);
+        },
+        shutdown:function(){
+            var status=$('.shutdown').css('display');
+            if(status=='none')
+                $('.shutdown').css({'display':'block'});
+            else
+                $('.shutdown').css({'display':'none'});
+            var windowHeight=  $(window).height();
+          $(window).resize(function(){
+              $('.topHalf').css({'height':$(window).height()/2+'px'});
+            $('.bottomHalf').css({'height':$(window).height()/2+'px'});
+          });
+            $('.topHalf').css({'height':$(window).height()/2+'px'});
+            $('.bottomHalf').css({'height':$(window).height()/2+'px'});
         }
     });
     return {

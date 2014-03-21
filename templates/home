@@ -1,17 +1,37 @@
 <header>
-<div class="logo"></div>
-<nav>
-<ul class="main_menu">
-<li><i class="fa fa-power-off fa-2x"></i>
-
-</li>
-<li><i class="fa fa-envelope-o fa-2x"></i></li>
-<li><i class="fa fa-folder-o fa-2x"></i></li>
-<li><i class="fa fa-user fa-2x"></i></li>
-<li><i class="fa fa-home fa-2x"></i>
-<div class="scroll">Home</div></li>
-</ul>
-</nav>
+    <div class="logo"></div>
+    <nav>
+        <ul class="main_menu">
+            <li id="power">
+                <i class="fa fa-power-off fa-2x"></i>
+                <div class="scroll">Shutdown</div></li>
+            </li>
+                <li id="contact"><i class="fa fa-envelope-o fa-2x"></i>
+                <div class="scroll">Contact</div></li>
+            </li>
+            <li id="portfolio">
+                <i class="fa fa-folder-o fa-2x"></i>
+                <div class="scroll">Examples</div></li>
+            </li>
+            <li id="cv">
+                <i class="fa fa-user fa-2x"></i>
+                <div class="scroll">Profile</div></li>
+            </li>
+            <li id="home">
+                <i class="fa fa-home fa-2x"></i>
+                <div class="scroll">Home</div>
+            </li>
+        </ul>
+    </nav>
 </header>
-<div id="content"></div>
-<footer>Copyright</footer>
+<div id="content">
+<div class="shutdown">
+    <div class="topHalf"></div>
+    <div class="midLine"></div>
+    <div class="midpoint"></div>
+    <div class="bottomHalf"></div>
+</div>
+</div>
+<footer>
+    Copyright
+</footer>

@@ -1,17 +1,41 @@
+/*VARIABLES
+|--------------------------------------------|
+*/
 @main-color: #101620;
 @menu-color-bg:#f4851c;
 @color-white:#fff;
+@align-center:center;
 
-body{
-  background:@main-color;
+/*MIXINS
+|--------------------------------------------|
+*/
+.text-iluminate(@luminity: 10px,@color:red){
+  text-shadow: 0 0 @arguments;
 }
-
+.background-image(@background:#101620){
+background:url(@background);
+background-position: center center;
+background-repeat: no-repeat;
+-webkit-background-size: cover;
+background-size: cover;
+}
+/*CSS
+|--------------------------------------------|
+*/
+body{
+  .background-image('/images/body_bg.jpg');
+  background-attachment: fixed;
+}
 nav .main_menu li{
-  background:@menu-color-bg;
+ /* background:@menu-color-bg;*/
   float: right;
   padding: 0.5em 2em;
   color: @color-white;
+  text-align:@align-center;
+  .text-iluminate(@color: #fff, @luminity: 30px);
+  cursor:pointer;
 }
+
 .main_menu{
   list-style:none;
 }
@@ -19,5 +43,51 @@ nav .main_menu li{
   float: right;
 }
 .scroll{
+  opacity:0;
+  text-align:center
+}
+.logo{
+ .background-image('/images/logoV.png');
+  width: 200px;
+  height: 100px;
+  display:block;
+  float:left;
+}
+
+footer{
+  position:absolute;
+  bottom:0;
+}
+.shutdown{
   display:none;
+}
+.topHalf,.bottomHalf {
+width: 100%;
+background: black;
+display: block;
+}
+.bottomHalf{
+  position:absolute;
+  bottom:0;
+}
+.midLine{
+  position:absolute;
+  z-index:3;
+  background:#fff;
+  width: 100%;
+  height:3px;
+  box-shadow: 0 0 10px #fff;
+}
+.midpoint{
+  position: absolute;
+  z-index: 3;
+  background: #fff;
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 0 10px #fff;
+  border: 10px solid #fff;
+  border-radius: 50%;
+  margin-left:50%;
+  margin-top:-20px
+  
 }
