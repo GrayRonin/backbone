@@ -2,11 +2,14 @@
 <div class="logo"></div>
 <nav>
 <ul class="main_menu">
-<li><i class="fa fa-power-off fa-2x"></i></li>
+<li><i class="fa fa-power-off fa-2x"></i>
+
+</li>
 <li><i class="fa fa-envelope-o fa-2x"></i></li>
 <li><i class="fa fa-folder-o fa-2x"></i></li>
 <li><i class="fa fa-user fa-2x"></i></li>
-<li><i class="fa fa-home fa-2x"></i></li>
+<li><i class="fa fa-home fa-2x"></i>
+<div class="scroll">Home</div></li>
 </ul>
 </nav>
 </header>

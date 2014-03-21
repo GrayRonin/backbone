@@ -11,7 +11,7 @@ define([
            // this.render();
         },
         events:{
-            "click #mainButton":"actionButon"
+            "mouseenter nav .main_menu li":"scroll"
         },
         render: function(){
             var view=this;
@@ -19,8 +19,12 @@ define([
             var maintemplate= _.template( mainTemplate,variables);
             this.$el.html(maintemplate);
         },
-        actionButon:function(){
-            alert('hihi');
+        scroll:function(e){
+            console.log($(e.currentTarget))
+            console.log($(e.currentTarget).children()[1])
+            $(e.currentTarget).children()[1].css({
+                'display':'block'
+            });
         }
     });
     return {
