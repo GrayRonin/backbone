@@ -27,7 +27,8 @@
 <div id="content">
 <div class="shutdown">
     <div class="topHalf"></div>
-    <div class="midLine"></div>
+    <div class="midLineLeft"></div>
+    <div class="midLineRight"></div>
     <div class="midpoint"></div>
     <div class="bottomHalf"></div>
 </div>

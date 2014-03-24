@@ -19,12 +19,26 @@ background-repeat: no-repeat;
 -webkit-background-size: cover;
 background-size: cover;
 }
+
+/*FONTS
+|--------------------------------------------|
+*/
+@font-face{
+  font-family: MenuFont;
+  src:url(/fonts/FascinateInline-Regular.ttf);
+}
+
 /*CSS
 |--------------------------------------------|
 */
+
 body{
   .background-image('/images/body_bg.jpg');
   background-attachment: fixed;
+}
+header div{
+  font-family: MenuFont;
+  font-size:20px;
 }
 nav .main_menu li{
  /* background:@menu-color-bg;*/
@@ -47,7 +61,7 @@ nav .main_menu li{
   text-align:center
 }
 .logo{
- .background-image('/images/logoV.png');
+ .background-image('/images/logo4.png');
   width: 200px;
   height: 100px;
   display:block;
@@ -65,29 +79,39 @@ footer{
 width: 100%;
 background: black;
 display: block;
+position:absolute;
+left:0
+}
+.topHalf{
+  top:0;
 }
 .bottomHalf{
-  position:absolute;
   bottom:0;
 }
-.midLine{
+.midLineLeft,.midLineRight{
   position:absolute;
   z-index:3;
   background:#fff;
-  width: 100%;
   height:3px;
   box-shadow: 0 0 10px #fff;
+  top:50%;
+}
+.midLineLeft{
+  left:0;
+}
+.midLineRight{
+  right:0;
 }
 .midpoint{
   position: absolute;
   z-index: 3;
   background: #fff;
-  width: 20px;
-  height: 20px;
   box-shadow: 0 0 10px #fff;
-  border: 10px solid #fff;
+  border:none;
   border-radius: 50%;
-  margin-left:50%;
-  margin-top:-20px
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  top:50%;
+  left:50%;
   
 }
