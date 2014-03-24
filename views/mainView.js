@@ -41,18 +41,27 @@ define([
            },100);
         },
         shutdown:function(){
-            var status=$('.shutdown').css('display');
-            if(status=='none')
-                $('.shutdown').css({'display':'block'});
+            var status = $('.shutdown').css('display'), view = this;
+            if (status == 'none')
+                $('.shutdown').css({
+                    'display' : 'block'
+                });
             else
-                $('.shutdown').css({'display':'none'});
-            var windowHeight=  $(window).height();
-          $(window).resize(function(){
-              $('.topHalf').css({'height':$(window).height()/2+'px'});
-            $('.bottomHalf').css({'height':$(window).height()/2+'px'});
-          });
-            $('.topHalf').css({'height':$(window).height()/2+'px'});
-            $('.bottomHalf').css({'height':$(window).height()/2+'px'});
+                $('.shutdown').css({
+                    'display' : 'none'
+                });
+            var windowHeight = $(window).height();
+            $(window).resize(function() {
+                view.resizeShutdow($(window).height());
+            });
+            view.resizeShutdow($(window).height()); 
+        },
+        resizeShutdow:function(Height){
+            $('.topHalf').css({'height':Height/2+'px'});
+            $('.bottomHalf').css({'height':Height/2+'px'});
+        },
+        animateShutdown:function(){
+            
         }
     });
     return {
